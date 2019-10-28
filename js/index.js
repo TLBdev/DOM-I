@@ -1,3 +1,4 @@
+// git status
 const siteContent = {
   "nav": {
     "nav-item-1": "Services",
@@ -40,3 +41,55 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+let navItems = document.querySelectorAll('nav a')
+
+navItems[0].innerText = siteContent.nav["nav-item-1"]
+navItems[1].innerText = siteContent.nav["nav-item-2"]
+navItems[2].innerText = siteContent.nav["nav-item-3"]
+navItems[3].innerText = siteContent.nav["nav-item-4"]
+navItems[4].innerText = siteContent.nav["nav-item-5"]
+navItems[5].innerText = siteContent.nav["nav-item-6"]
+
+let ctaImg = document.getElementById("cta-img");
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"])
+
+let ctaCont = document.querySelectorAll('.cta-text *')
+
+ctaCont[0].innerText = siteContent.cta['h1']
+ctaCont[1].innerText = siteContent.cta['button']
+
+let mainContent = document.querySelectorAll('.text-content *')
+mainContent[0].innerText = siteContent['main-content']['features-h4']
+mainContent[1].innerText = siteContent['main-content']["features-content"]
+mainContent[2].innerText = siteContent['main-content']["about-h4"]
+mainContent[3].innerText = siteContent['main-content']["about-content"]
+mainContent[4].innerText = siteContent['main-content']["services-h4"]
+mainContent[5].innerText = siteContent['main-content']["services-content"]
+mainContent[6].innerText = siteContent['main-content']["vision-h4"]
+mainContent[7].innerText = siteContent['main-content']["vision-content"]
+
+let middleImg = document.getElementById("middle-img");
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
+
+let contactContent = document.querySelectorAll('.contact *')
+
+contactContent[0].innerText = siteContent.contact['contact-h4']
+contactContent[1].innerText = siteContent.contact['address']
+contactContent[2].innerText = siteContent.contact['phone']
+contactContent[3].innerText = siteContent.contact['email']
+
+let footerContent = document.querySelectorAll('footer p')
+
+footerContent[0].innerText = siteContent.footer['copyright']
+
+navItems.forEach(e => e.setAttribute('style', 'color: green'))
+
+let navContainer = document.querySelector('nav') 
+let newFirst = document.createElement('a')
+let newLast = document.createElement('a')
+newFirst.innerText = 'First'
+newLast.innerText = 'Last'
+
+navContainer.appendChild(newLast)
+navContainer.prepend(newFirst)
